@@ -75,7 +75,7 @@
         }
         label{
             color: #121032;
-            z-index: 3 !important;
+            z-index: 1 !important;
             position: relative;
         }
         .hr {
@@ -93,9 +93,10 @@
     <div class="container mt-5">
         <h1 id="title" class="txt">Ajax & fetch Example</h1>
         <p class="txt" style="border-radius: 200px 200px 200px 200px;
-            text-shadow: none;">This is an example for ajax call.</p>
+            text-shadow: none;">This is an example for fetch and ajax call.</p>
 
-        <!-- first row --> <hr class="hr">
+        <!-- first row --> 
+        <hr class="hr">
         <div class="row mt-3">
             
             <div class="col-sm-3"></div>
@@ -139,7 +140,7 @@
         </div>
         <hr class="hr">
 
-        <script src="./ajax.js"></script>
+        <script src="./fetch_&_ajax.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

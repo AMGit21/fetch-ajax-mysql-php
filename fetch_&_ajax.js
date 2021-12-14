@@ -25,8 +25,9 @@ const get_allPerson = async(url) => {
         console.log(received_data);
         let tbody_person = '';
         Object.keys(received_data).forEach(person => {
+            // console.log(received_data[person]);
             let person_record = `<tr class='table'>
-            <td>${received_data[person].fname}</td>
+            <td>${received_data[person]['fname']}</td>
             <td>${received_data[person].lname}</td>
             </tr>`;
             tbody_person += person_record;
@@ -138,30 +139,35 @@ const animate_getMessage = getMessage.animate(
 // using ajax
 
 // $(document).ready(function() {
-//     $('#add_new').click(function(e) {
+
+//     $('#add_new').click(function(e) { //document.getElementById('add_new').addEventListener("click", ()=>{...});
 //         e.preventDefault();
-//         var fname = $("#fname").val();
+//         var fname = $("#fname").val(); //document.getElementById('fname').value;
 //         var lname = $("#lname").val();
-//         $.ajax({
-//             type: "POST",
-//             url: "./insert_person.php",
-//             dataType: "json",
-//             data: { fname: fname, lname: lname },
-//             success: function(received_data) {
-//                 console.log(received_data);
-//                 document.getElementById('message').innerHTML = ` <div id="message" class="alert alert-secondary alert-dismissible fade show">
+//         if (fname && lname && fname.length > 3 && !fname.trim() && lname.length > 3 && !lname.trim()) {
+//             fname = fname.trim();
+//             lname = lname.trim();
+//             $.ajax({
+//                 type: "POST",
+//                 url: "./insert_person.php",
+//                 dataType: "json",
+//                 data: { fname: fname, lname: lname },
+//                 success: function(received_data) {
+//                     console.log(received_data);
+//                     document.getElementById('message').innerHTML = ` <div id="message" class="alert alert-secondary alert-dismissible fade show">
 //                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 //                     <strong style="color: #121032">Remark:</strong> <span style="color: #B95656">${received_data['message']}.</span>
 //                   </div>`;
-//                 if (received_data['first_name']) {
-//                     document.getElementById('tbody_info_person').innerHTML +=
-//                         `<tr><td>${received_data["first_name"]}</td><td>${received_data["last_name"]}</td></tr>`;
+//                     if (received_data['first_name']) {
+//                         document.getElementById('tbody_info_person').innerHTML +=
+//                             `<tr><td>${received_data["first_name"]}</td><td>${received_data["last_name"]}</td></tr>`;
+//                     }
+//                 },
+//                 error: function(request, status, error) {
+//                     console.log(error);
 //                 }
-//             },
-//             error: function(request, status, error) {
-//                 console.log(error);
-//             }
-//         });
+//             });
+//         } else alert("please enter the data");
 //     });
 // });
 //  ***************************************************************************

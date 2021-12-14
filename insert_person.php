@@ -42,6 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $msg = "please enter the data";
     
     $data["message"] = $msg;
-    echo json_encode($data);
+    echo json_encode($data);// $data=[first_name=>$fn,last_name=>$ln,$message=>$msg]
 }
 ?>
